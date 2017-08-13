@@ -44,10 +44,14 @@
 #include <numeric>   // std::accumulate
 
 // OpenCL
+#ifdef USE_CLEW
+#include "clew.h"
+#else
 #if defined(__APPLE__) || defined(__MACOSX)
   #include <OpenCL/opencl.h>
 #else
   #include <CL/opencl.h>
+#endif
 #endif
 
 namespace CLCudaAPI {

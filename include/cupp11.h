@@ -43,8 +43,12 @@
 #include <stdexcept> // std::runtime_error
 
 // CUDA
+#ifdef USE_CUEW
+#include "cuew.h"
+#else
 #include <cuda.h>    // CUDA driver API
 #include <nvrtc.h>   // NVIDIA runtime compilation API
+#endif
 
 namespace CLCudaAPI {
 // =================================================================================================
